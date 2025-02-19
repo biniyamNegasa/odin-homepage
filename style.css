@@ -1,0 +1,110 @@
+:root {
+  --color: #0891b2;
+  --width: min(100vw, 42rem);
+
+  --angle: -11deg;
+  --abs-angle: max(var(--angle), var(--angle) * -1);
+  --tan-alpha: tan(var(--abs-angle));
+  --skew-padding: calc(var(--width) * var(--tan-alpha) / 2);
+}
+body {
+  margin: 0;
+  position: relative;
+}
+h1,
+h2,
+h3 {
+  font-family: "Playfair Display", serif;
+  font-weight: lighter;
+}
+p,
+a {
+  font-family: Roboto, sans-serif;
+  color: #6c6967;
+}
+.slanted-background {
+  position: absolute;
+  padding: var(--skew-padding) 0;
+  height: 60vh;
+  width: 100%;
+  pointer-events: none;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: calc(-2 * var(--skew-padding));
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--color);
+    transform: skewY(var(--angle));
+    z-index: -1;
+  }
+}
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: wrap;
+}
+.about {
+  background: #fff;
+  box-shadow: 1px 1px 8px grey;
+  padding: 1.5rem 2rem 1.5rem 1.5rem;
+}
+.about > p {
+  font-size: 1.3rem;
+}
+.about > h2 {
+  font-size: 2.2rem;
+}
+.profile {
+  position: relative;
+}
+.profile > h1 {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  color: white;
+  text-shadow: 1px 1px 8px grey;
+  z-index: 1;
+}
+.profile > img {
+  box-shadow: 0.1px 0.1px 8px grey;
+}
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  justify-content: end;
+}
+.main-container,
+.work,
+footer {
+  padding: 4rem 5rem;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+.project {
+  box-shadow: 1px 1px 8px grey;
+}
+
+.project > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.project > div,
+p {
+  padding: 0 1em;
+}
+.project > img {
+  width: 100%;
+}
+
+footer {
+  background: var(--color);
+}
