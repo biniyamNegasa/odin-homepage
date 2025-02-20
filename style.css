@@ -20,7 +20,14 @@ h3 {
 p,
 a {
   font-family: Roboto, sans-serif;
-  color: #6c6967;
+}
+a {
+  display: inline-block;
+  text-decoration: none;
+  transition: transform 0.2s ease-in-out;
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 .slanted-background {
   position: absolute;
@@ -32,7 +39,7 @@ a {
   &:before {
     content: "";
     position: absolute;
-    top: calc(-2 * var(--skew-padding));
+    top: calc(-5 * var(--skew-padding));
     left: 0;
     right: 0;
     bottom: 0;
@@ -45,7 +52,6 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex: wrap;
 }
 .about {
   background: #fff;
@@ -53,7 +59,10 @@ a {
   padding: 1.5rem 2rem 1.5rem 1.5rem;
 }
 .about > p {
+  padding-left: 0;
   font-size: 1.3rem;
+  flex: 1 1 300px;
+  color: #6c6967;
 }
 .about > h2 {
   font-size: 2.2rem;
@@ -66,6 +75,8 @@ a {
   right: 0;
   bottom: 0;
   color: white;
+  font-size: 3.5rem;
+  margin: 0;
   text-shadow: 1px 1px 8px grey;
   z-index: 1;
 }
@@ -83,6 +94,10 @@ footer {
   padding: 4rem 5rem;
 }
 
+.work h2 {
+  font-size: 2.5rem;
+}
+
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -90,6 +105,10 @@ footer {
 }
 .project {
   box-shadow: 1px 1px 8px grey;
+}
+.project > p {
+  color: #6c6967;
+  font-size: 1.2rem;
 }
 
 .project > div {
@@ -104,7 +123,37 @@ p {
 .project > img {
   width: 100%;
 }
+.project div h3 {
+  font-size: 1.5rem;
+}
 
 footer {
   background: var(--color);
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+footer .person {
+  width: 100%;
+}
+
+.contact h2 {
+  font-size: 2.5rem;
+}
+.contact p {
+  padding-left: 0;
+  font-size: 1.5rem;
+}
+.phone-email > a {
+  display: flex;
+  align-items: center;
+  color: white;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+}
+.footer-social-icons {
+  display: flex;
+  gap: 1rem;
 }
