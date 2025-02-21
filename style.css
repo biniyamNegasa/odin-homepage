@@ -103,7 +103,7 @@ footer {
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-  gap: 1.5rem;
+  gap: 2rem;
 }
 .project {
   box-shadow: 1px 1px 8px grey;
@@ -118,6 +118,11 @@ footer {
   justify-content: space-between;
   align-items: center;
 }
+.project > div > div {
+  display: flex;
+  gap: 1.5rem;
+}
+
 .project > div,
 p {
   padding: 0 1em;
@@ -168,14 +173,58 @@ footer .contact p {
   gap: 1rem;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 888px) {
   .main-container {
+    display: block;
     padding: 2rem;
-    flex-direction: column;
-    align-items: center;
     gap: 1rem;
   }
   .about {
+    margin-left: 10%;
+    margin-top: 10%;
+  }
+  .about > p {
+    font-size: 1.2rem;
+    flex: 1 1 100%;
+  }
+  .about > h2 {
+    font-size: 1.8rem;
+  }
+  .profile {
+    max-width: 400px;
+    float: left;
+  }
+  .profile > h1 {
+    left: 50%;
+    top: 0;
+    font-size: 2.5rem;
+    text-wrap-mode: nowrap;
+  }
+  .profile > img {
+    width: 95%;
+  }
+  .social-icons {
+    gap: 1.5rem;
+    justify-content: start;
+  }
+  .work,
+  footer {
+    padding: 2rem;
+  }
+  .projects {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .main-container {
+    display: flex;
+    padding: 2rem;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .about {
+    margin-left: 0;
     padding: 1rem;
     gap: 1rem;
     box-shadow: none;
@@ -188,14 +237,13 @@ footer .contact p {
     font-size: 1.8rem;
   }
   .profile > h1 {
+    left: 10%;
+    top: 70%;
     font-size: 2.5rem;
+    text-wrap-mode: wrap;
   }
   .profile > img {
     width: 100%;
-  }
-  .social-icons {
-    gap: 1.5rem;
-    justify-content: start;
   }
   .work,
   footer {
@@ -207,10 +255,6 @@ footer .contact p {
   .project > div {
     flex-direction: column;
     gap: 0.5rem;
-  }
-  .project > div > div {
-    display: flex;
-    gap: 1.5rem;
   }
   footer .person {
     width: calc(100% + 4rem);
