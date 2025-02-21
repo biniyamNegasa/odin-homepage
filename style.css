@@ -22,6 +22,7 @@ a {
   font-family: Roboto, sans-serif;
 }
 a {
+  width: fit-content;
   display: inline-block;
   text-decoration: none;
   transition: transform 0.2s ease-in-out;
@@ -81,6 +82,7 @@ a {
   z-index: 1;
 }
 .profile > img {
+  object-fit: cover;
   box-shadow: 0.1px 0.1px 8px grey;
 }
 .social-icons {
@@ -136,6 +138,10 @@ footer {
 }
 footer .person {
   width: 100%;
+  object-fit: cover;
+}
+footer .contact p {
+  max-width: 100%;
 }
 
 .contact h2 {
@@ -144,6 +150,10 @@ footer .person {
 .contact p {
   padding-left: 0;
   font-size: 1.5rem;
+}
+.phone-email {
+  display: flex;
+  gap: 1rem;
 }
 .phone-email > a {
   display: flex;
@@ -156,4 +166,54 @@ footer .person {
 .footer-social-icons {
   display: flex;
   gap: 1rem;
+}
+
+@media (max-width: 480px) {
+  .main-container {
+    padding: 2rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  .about {
+    padding: 1rem;
+    gap: 1rem;
+    box-shadow: none;
+  }
+  .about > p {
+    font-size: 1.2rem;
+    flex: 1 1 100%;
+  }
+  .about > h2 {
+    font-size: 1.8rem;
+  }
+  .profile > h1 {
+    font-size: 2.5rem;
+  }
+  .profile > img {
+    width: 100%;
+  }
+  .social-icons {
+    gap: 1.5rem;
+    justify-content: start;
+  }
+  .work,
+  footer {
+    padding: 2rem;
+  }
+  .projects {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  .project > div {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .project > div > div {
+    display: flex;
+    gap: 1.5rem;
+  }
+  footer .person {
+    width: calc(100% + 4rem);
+    margin: 0 -2rem -2rem;
+  }
 }
