@@ -107,10 +107,13 @@ footer {
 }
 .project {
   box-shadow: 1px 1px 8px grey;
+  display: flex;
+  flex-direction: column;
 }
 .project > p {
   color: #6c6967;
   font-size: 1.2rem;
+  hyphens: auto;
 }
 
 .project > div {
@@ -129,6 +132,7 @@ p {
 }
 .project > img {
   width: 100%;
+  height: 300px;
 }
 .project div h3 {
   font-size: 30px;
