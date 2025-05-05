@@ -14,12 +14,12 @@ body {
 h1,
 h2,
 h3 {
-  font-family: "Playfair Display", serif;
+  font-family: "Tagesschrift", sans-serif;
   font-weight: lighter;
 }
 p,
 a {
-  font-family: Roboto, sans-serif;
+  font-family: "Lexend", sans-serif;
 }
 a {
   width: fit-content;
